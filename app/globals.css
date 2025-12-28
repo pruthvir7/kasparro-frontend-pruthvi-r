@@ -1,0 +1,347 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 99 102 241;
+    --primary-foreground: 255 255 255;
+  }
+}
+
+/* Animations */
+@keyframes ripple {
+  to {
+    width: 600px;
+    height: 600px;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-ripple {
+  animation: ripple 600ms ease-out;
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  background-size: 1000px 100%;
+}
+
+.animate-slide-up {
+  animation: slideUpFade 0.5s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+/* Transitions */
+* {
+  transition: background-color 200ms, color 200ms, border-color 200ms;
+}
+
+.skeleton {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  background-color: rgb(226 232 240);
+}
+
+/* ============================================
+   DARK MODE - COMPREHENSIVE
+   ============================================ */
+
+html.dark {
+  color-scheme: dark;
+  background-color: rgb(17 24 39);
+  color: rgb(226 232 240);
+}
+
+html.dark body {
+  background-color: rgb(17 24 39);
+  color: rgb(226 232 240);
+}
+
+/* ALL BACKGROUNDS TO DARK */
+html.dark [class*='bg-white'],
+html.dark [class*='bg-slate-50'],
+html.dark [class*='bg-gray-50'],
+html.dark [class*='bg-slate-100'],
+html.dark [class*='bg-gray-100'] {
+  background-color: rgb(30 41 59) !important;
+  color: rgb(226 232 240) !important;
+}
+
+/* HEADINGS - WHITE */
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6 {
+  color: rgb(255 255 255) !important;
+}
+
+/* PARAGRAPHS - LIGHT GRAY */
+html.dark p {
+  color: rgb(226 232 240) !important;
+}
+
+html.dark span,
+html.dark div {
+  color: rgb(226 232 240) !important;
+}
+
+/* LINKS */
+html.dark a {
+  color: rgb(96 165 250) !important;
+}
+
+html.dark a:hover {
+  color: rgb(147 197 253) !important;
+}
+
+/* ============================================
+   WHITE BOXES - DARK TEXT IN DARK MODE
+   ============================================ */
+
+html.dark [class*='rounded-lg']:not([class*='rounded-full']),
+html.dark [class*='rounded-xl']:not([class*='rounded-full']) {
+  background-color: rgb(255 255 255) !important;
+  color: rgb(17 24 39) !important;
+}
+
+html.dark [class*='rounded-lg'] h1,
+html.dark [class*='rounded-lg'] h2,
+html.dark [class*='rounded-lg'] h3,
+html.dark [class*='rounded-lg'] h4,
+html.dark [class*='rounded-lg'] h5,
+html.dark [class*='rounded-lg'] h6,
+html.dark [class*='rounded-xl'] h1,
+html.dark [class*='rounded-xl'] h2,
+html.dark [class*='rounded-xl'] h3,
+html.dark [class*='rounded-xl'] h4,
+html.dark [class*='rounded-xl'] h5,
+html.dark [class*='rounded-xl'] h6 {
+  color: rgb(17 24 39) !important;
+}
+
+html.dark [class*='rounded-lg'] p,
+html.dark [class*='rounded-lg'] span,
+html.dark [class*='rounded-lg'] div,
+html.dark [class*='rounded-xl'] p,
+html.dark [class*='rounded-xl'] span,
+html.dark [class*='rounded-xl'] div {
+  color: rgb(17 24 39) !important;
+}
+
+html.dark .card {
+  background-color: rgb(255 255 255) !important;
+  color: rgb(17 24 39) !important;
+}
+
+html.dark .card h1,
+html.dark .card h2,
+html.dark .card h3,
+html.dark .card h4,
+html.dark .card h5,
+html.dark .card h6,
+html.dark .card p,
+html.dark .card span,
+html.dark .card div {
+  color: rgb(17 24 39) !important;
+}
+
+/* ============================================
+   SECTIONS & CONTAINERS - DARK BACKGROUNDS
+   ============================================ */
+
+html.dark section {
+  background-color: rgb(17 24 39) !important;
+  color: rgb(226 232 240) !important;
+}
+
+html.dark main {
+  background-color: rgb(17 24 39) !important;
+  color: rgb(226 232 240) !important;
+}
+
+html.dark article {
+  background-color: rgb(17 24 39) !important;
+  color: rgb(226 232 240) !important;
+}
+
+/* ============================================
+   FORMS & INPUTS
+   ============================================ */
+
+html.dark input,
+html.dark textarea,
+html.dark select {
+  border-color: rgb(55 65 81) !important;
+  background-color: rgb(30 41 59) !important;
+  color: rgb(226 232 240) !important;
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+  color: rgb(107 114 128) !important;
+}
+
+html.dark input:focus,
+html.dark textarea:focus,
+html.dark select:focus {
+  border-color: rgb(59 130 246) !important;
+  background-color: rgb(30 41 59) !important;
+}
+
+/* ============================================
+   BUTTONS & HOVER STATES
+   ============================================ */
+
+html.dark button {
+  color: inherit;
+}
+
+html.dark .btn--secondary {
+  background-color: rgb(30 41 59) !important;
+  color: rgb(226 232 240) !important;
+}
+
+html.dark .btn--secondary:hover {
+  background-color: rgb(55 65 81) !important;
+}
+
+/* FIX HOVER - Make hovered text visible */
+html.dark button:hover {
+  color: rgb(255 255 255) !important;
+}
+
+/* Override dark button text on hover */
+html.dark [class*='hover:bg-'] {
+  color: rgb(226 232 240) !important;
+}
+
+html.dark [class*='hover:bg-']:hover {
+  color: rgb(255 255 255) !important;
+}
+
+/* ============================================
+   TABLES
+   ============================================ */
+
+html.dark table {
+  color: rgb(226 232 240) !important;
+}
+
+html.dark th {
+  background-color: rgb(30 41 59) !important;
+  color: rgb(255 255 255) !important;
+}
+
+html.dark td {
+  border-color: rgb(55 65 81) !important;
+  color: rgb(226 232 240) !important;
+}
+
+/* ============================================
+   TEXT UTILITIES - OVERRIDE
+   ============================================ */
+
+html.dark .text-slate-300 {
+  color: rgb(203 213 225) !important;
+}
+
+html.dark .text-slate-400 {
+  color: rgb(148 163 184) !important;
+}
+
+html.dark .text-slate-500 {
+  color: rgb(100 116 139) !important;
+}
+
+html.dark .text-slate-600 {
+  color: rgb(71 85 105) !important;
+}
+
+html.dark .text-gray-500,
+html.dark .text-gray-600 {
+  color: rgb(209 213 219) !important;
+}
+
+/* ============================================
+   LABELS & SMALL TEXT
+   ============================================ */
+
+html.dark small,
+html.dark label {
+  color: rgb(209 213 219) !important;
+}
+
+html.dark .text-sm {
+  color: rgb(209 213 219) !important;
+}
+
+/* ============================================
+   BORDERS - DARK MODE
+   ============================================ */
+
+html.dark [class*='border-white'],
+html.dark [class*='border-slate-100'],
+html.dark [class*='border-gray-100'] {
+  border-color: rgb(55 65 81) !important;
+}
+
+html.dark [class*='border-slate-200'],
+html.dark [class*='border-gray-200'] {
+  border-color: rgb(55 65 81) !important;
+}

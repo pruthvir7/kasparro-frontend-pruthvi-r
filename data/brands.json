@@ -1,0 +1,30 @@
+{
+    "brands": [
+      {
+        "id": "acme-saas",
+        "name": "Acme SaaS",
+        "domain": "acmesaas.com",
+        "industry": "B2B Software"
+      },
+      {
+        "id": "techcorp",
+        "name": "TechCorp",
+        "domain": "techcorp.io",
+        "industry": "Enterprise Tech"
+      }
+    ],
+    "currentBrand": {
+      "id": "acme-saas",
+      "name": "Acme SaaS",
+      "domain": "acmesaas.com",
+      "industry": "B2B Software",
+      "metrics": {
+        "aiVisibilityScore": 73,
+        "trustScore": 72,
+        "nonBrandedKeywordCoverage": 64,
+        "lastAuditDate": "2025-12-20T10:30:00Z",
+        "trend": "up"
+      }
+    }
+  }
+  

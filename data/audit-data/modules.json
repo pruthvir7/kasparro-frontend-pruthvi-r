@@ -1,0 +1,222 @@
+{
+    "modules": [
+      {
+        "id": "content-relevance",
+        "name": "Content Relevance",
+        "description": "Analyzes how well your content matches AI model training patterns",
+        "score": 78,
+        "status": "good",
+        "insights": [
+          "Strong topical coverage across 12 core themes",
+          "Content depth exceeds AI model expectations",
+          "Missing coverage in 3 emerging topic clusters"
+        ],
+        "issues": [
+          {
+            "severity": "medium",
+            "message": "Thin content detected on 8 product pages",
+            "impact": "May reduce AI citation probability"
+          },
+          {
+            "severity": "low",
+            "message": "Outdated statistics in 4 articles",
+            "impact": "Could affect trustworthiness signals"
+          }
+        ],
+        "recommendations": [
+          "Expand product pages to minimum 800 words with use cases",
+          "Update statistics dated before 2024",
+          "Add FAQ sections to cover long-tail queries"
+        ]
+      },
+      {
+        "id": "entity-recognition",
+        "name": "Entity Recognition",
+        "description": "Measures how clearly AI models can identify and understand your brand",
+        "score": 85,
+        "status": "excellent",
+        "insights": [
+          "Brand entity successfully recognized across 94% of contexts",
+          "Strong association with 15 industry keywords",
+          "Clear differentiation from competitors"
+        ],
+        "issues": [
+          {
+            "severity": "low",
+            "message": "Ambiguous brand mentions on partner sites",
+            "impact": "May confuse entity disambiguation"
+          }
+        ],
+        "recommendations": [
+          "Implement structured data markup on all pages",
+          "Ensure consistent brand naming across external mentions",
+          "Create a brand knowledge graph document"
+        ]
+      },
+      {
+        "id": "eeat-signals",
+        "name": "E-E-A-T Signals",
+        "description": "Evaluates Experience, Expertise, Authoritativeness, and Trustworthiness",
+        "score": 72,
+        "status": "good",
+        "insights": [
+          "Author credentials present on 85% of content",
+          "Strong backlink profile from authoritative domains",
+          "Clear expertise demonstrated in technical content"
+        ],
+        "issues": [
+          {
+            "severity": "high",
+            "message": "Missing author bios on 12 key articles",
+            "impact": "Reduces trust signals for AI models"
+          },
+          {
+            "severity": "medium",
+            "message": "No published date on 18 pages",
+            "impact": "Affects freshness perception"
+          },
+          {
+            "severity": "low",
+            "message": "Limited first-hand experience signals",
+            "impact": "May reduce experience score"
+          }
+        ],
+        "recommendations": [
+          "Add comprehensive author bios with credentials",
+          "Implement published and updated dates site-wide",
+          "Include case studies and original research",
+          "Add customer testimonials with verifiable details"
+        ]
+      },
+      {
+        "id": "citation-worthiness",
+        "name": "Citation Worthiness",
+        "description": "Assesses likelihood of being cited by AI models in responses",
+        "score": 68,
+        "status": "warning",
+        "insights": [
+          "High citation rate for statistical content",
+          "Original research drives 40% of citations",
+          "Weak performance in comparison queries"
+        ],
+        "issues": [
+          {
+            "severity": "high",
+            "message": "Only 3 pieces of original research published",
+            "impact": "Limits citation opportunities"
+          },
+          {
+            "severity": "medium",
+            "message": "Competitor comparison pages lack depth",
+            "impact": "Missing out on comparison query citations"
+          },
+          {
+            "severity": "medium",
+            "message": "No data visualizations or charts",
+            "impact": "Reduces shareability and citation appeal"
+          }
+        ],
+        "recommendations": [
+          "Publish monthly industry reports with original data",
+          "Create comprehensive comparison guides",
+          "Add infographics and data visualizations",
+          "Develop a resource library with downloadable assets"
+        ]
+      },
+      {
+        "id": "semantic-clarity",
+        "name": "Semantic Clarity",
+        "description": "Evaluates how clearly your content communicates meaning to AI models",
+        "score": 81,
+        "status": "good",
+        "insights": [
+          "Clear topic modeling across content hierarchy",
+          "Strong use of semantic HTML structure",
+          "Consistent terminology and definitions"
+        ],
+        "issues": [
+          {
+            "severity": "low",
+            "message": "Jargon without definitions in 6 articles",
+            "impact": "May reduce comprehension for general queries"
+          },
+          {
+            "severity": "low",
+            "message": "Inconsistent heading hierarchy on 10 pages",
+            "impact": "Affects content structure understanding"
+          }
+        ],
+        "recommendations": [
+          "Add glossary definitions for technical terms",
+          "Audit and fix heading hierarchy issues",
+          "Use schema.org markup for key concepts"
+        ]
+      },
+      {
+        "id": "freshness-signals",
+        "name": "Freshness Signals",
+        "description": "Measures content recency and update frequency",
+        "score": 65,
+        "status": "warning",
+        "insights": [
+          "Average content age: 8 months",
+          "Update frequency: 2.3 articles per month",
+          "Strong performance on trending topics"
+        ],
+        "issues": [
+          {
+            "severity": "high",
+            "message": "24 articles not updated in 12+ months",
+            "impact": "Signals stale information to AI models"
+          },
+          {
+            "severity": "medium",
+            "message": "No content published on 3 trending topics",
+            "impact": "Missing timely citation opportunities"
+          }
+        ],
+        "recommendations": [
+          "Establish quarterly content refresh schedule",
+          "Create content calendar for trending topics",
+          "Add 'Last Updated' timestamps prominently",
+          "Archive or redirect severely outdated content"
+        ]
+      },
+      {
+        "id": "cross-platform-presence",
+        "name": "Cross-Platform Presence",
+        "description": "Analyzes brand visibility across multiple data sources AI models use",
+        "score": 58,
+        "status": "warning",
+        "insights": [
+          "Strong presence on industry forums",
+          "Limited social media footprint",
+          "Weak third-party review coverage"
+        ],
+        "issues": [
+          {
+            "severity": "high",
+            "message": "No presence on 4 major review platforms",
+            "impact": "Limits third-party validation signals"
+          },
+          {
+            "severity": "medium",
+            "message": "Inconsistent NAP (Name, Address, Phone) across directories",
+            "impact": "Confuses entity resolution"
+          },
+          {
+            "severity": "medium",
+            "message": "Limited podcast or video content",
+            "impact": "Missing multimodal training data"
+          }
+        ],
+        "recommendations": [
+          "Claim and optimize profiles on review platforms",
+          "Standardize NAP information across all listings",
+          "Create video content for YouTube and social platforms",
+          "Participate in industry podcasts and webinars"
+        ]
+      }
+    ]
+  }
+  
