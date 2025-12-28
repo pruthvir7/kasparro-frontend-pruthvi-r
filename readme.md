@@ -6,6 +6,15 @@ Kasparro is a frontend-only Next.js app that showcases an AI‑native SEO platfo
 
 ---
 
+
+## 🚀 Live Demo
+
+[![Deployed on Render](https://kasparro-frontend-pruthvi-r.onrender.com)](https://kasparro-frontend-pruthvi-r.onrender.com/)
+
+**Live Site:** [https://kasparro-frontend-pruthvi-r.onrender.com/](https://kasparro-frontend-pruthvi-r.onrender.com/)
+
+---
+
 ## 🚀 Features
 
 ### Marketing Site
