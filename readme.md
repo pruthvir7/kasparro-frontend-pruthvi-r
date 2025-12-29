@@ -10,7 +10,7 @@ Kasparro is a **frontend-only Next.js app** that showcases a **production-ready 
 
 ## 🚀 Live Demo
 
-[![Deployed on Render](https://kasparro-frontend-pruthvi-r.onrenderhttps://kasparro-frontend-pruthvi-r.onrender:** [https://kasparro-frontend-pruthvi-r.onrender.com/](https://kasparro-frontend-pruthvi-r.onrender.com/)
+Deployed on Render: https://kasparro-frontend-pruthvi-r.onrender.com/
 
 **Key Demo Flow:**
 ```
