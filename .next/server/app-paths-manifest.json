@@ -1,8 +1,6 @@
 {
-  "/(public)/page": "app/(public)/page.js",
-  "/(public)/platform/page": "app/(public)/platform/page.js",
-  "/(dashboard)/dashboard/page": "app/(dashboard)/dashboard/page.js",
-  "/(public)/about/page": "app/(public)/about/page.js",
   "/(dashboard)/audit/page": "app/(dashboard)/audit/page.js",
-  "/(dashboard)/architecture/page": "app/(dashboard)/architecture/page.js"
+  "/(dashboard)/dashboard/page": "app/(dashboard)/dashboard/page.js",
+  "/(public)/platform/page": "app/(public)/platform/page.js",
+  "/(public)/page": "app/(public)/page.js"
 }

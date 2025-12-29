@@ -8,6 +8,7 @@ import { formatDate } from '@/lib/utils';
 import brandDataImport from '@/data/brands.json';
 import auditDataImport from '@/data/audit-data/modules.json';
 import { BrandData, AuditData } from '@/types';
+import { useDashboardStore } from '@/lib/dashboardStore';  // ✅ ADD ZUSTAND
 import { useToast } from '@/lib/useToast';
 import { PlayCircle, FileText, Download } from 'lucide-react';
 
@@ -15,10 +16,12 @@ const brandData = brandDataImport as BrandData;
 const auditData = auditDataImport as AuditData;
 
 export default function DashboardPage() {
-  const { brands, currentBrand } = brandData;
+  const { currentBrandId } = useDashboardStore();  // ✅ READ FROM ZUSTAND
+  const currentBrand = brandData.brands.find(b => b.id === currentBrandId) || brandData.brands[0];
   const [isRunningAudit, setIsRunningAudit] = useState(false);
   const { showToast, ToastComponent } = useToast();
 
+  // ✅ YOUR ORIGINAL FUNCTIONS - MOVED HERE
   const handleRunAudit = () => {
     setIsRunningAudit(true);
     showToast('Starting comprehensive AI-SEO audit...', 'info');
@@ -155,11 +158,8 @@ export default function DashboardPage() {
           <h1 className="text-3xl font-bold text-slate-900">Dashboard</h1>
           <p className="mt-1 text-sm text-slate-600">Overview of your AI-SEO performance</p>
         </div>
-        <BrandSelector
-          brands={brands}
-          currentBrand={currentBrand}
-          onSelect={() => {}}
-        />
+        {/* ✅ FIXED: No props - uses Zustand */}
+        <BrandSelector />
       </div>
 
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -184,6 +184,7 @@ export default function DashboardPage() {
         />
       </div>
 
+      {/* ✅ YOUR ORIGINAL Quick Actions - FUNCTIONS NOW DEFINED */}
       <div className="mt-8 rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
         <h2 className="text-xl font-semibold text-slate-900">Quick Actions</h2>
         <p className="mt-1 text-sm text-slate-600">Manage your audits and reports</p>

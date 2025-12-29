@@ -9,86 +9,102 @@ interface AuditModuleDetailProps {
 
 export default function AuditModuleDetail({ module }: AuditModuleDetailProps) {
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold">{module.name}</h1>
-        <p className="mt-2 text-lg text-slate-600">{module.description}</p>
-        <div className="mt-4 flex items-center space-x-4">
-          <div className="text-4xl font-bold text-primary">{module.score}/100</div>
-          <div className={`rounded-full px-4 py-1 text-sm font-semibold ${getSeverityColor(module.status)}`}>
+    <div className="space-y-4">
+      {/* Header - Compact */}
+      <div className="pb-3 border-b border-slate-200">
+        <h1 className="text-2xl font-bold leading-tight">
+          {module.name}
+        </h1>
+        <p className="mt-1 text-sm text-slate-600 leading-relaxed">
+          {module.description}
+        </p>
+        <div className="mt-2 flex items-center gap-3">
+          <div className="text-3xl font-black text-primary">
+            {module.score}/100
+          </div>
+          <div className={`rounded-full px-3 py-1 text-xs font-semibold ${getSeverityColor(module.status)}`}>
             {module.status.toUpperCase()}
           </div>
         </div>
       </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center text-lg">
-            <CheckCircle2 className="mr-2 h-5 w-5 text-green-600" />
-            Key Insights
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2">
-            {module.insights.map((insight, index) => (
-              <li key={index} className="flex items-start">
-                <span className="mr-2 mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-green-600" />
-                <span className="text-slate-700">{insight}</span>
-              </li>
-            ))}
-          </ul>
-        </CardContent>
-      </Card>
+      {/* Insights - Compact */}
+      {module.insights && module.insights.length > 0 && (
+        <Card className="border-slate-200 shadow-sm">
+          <CardHeader className="pb-2">
+            <CardTitle className="flex items-center text-sm font-semibold">
+              <CheckCircle2 className="mr-2 h-4 w-4 text-green-600" />
+              Key Insights
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="pt-1 pb-3">
+            <ul className="space-y-1.5">
+              {module.insights.map((insight, index) => (
+                <li key={index} className="flex items-start text-sm">
+                  <span className="mr-2 mt-0.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-green-600" />
+                  <span className="text-slate-700 leading-tight">{insight}</span>
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+      )}
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center text-lg">
-            <AlertCircle className="mr-2 h-5 w-5 text-red-600" />
-            Issues Detected
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-3">
-            {module.issues.map((issue, index) => (
-              <div
-                key={index}
-                className={`rounded-md border p-4 ${getSeverityColor(issue.severity)}`}
-              >
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <p className="font-medium">{issue.message}</p>
-                    <p className="mt-1 text-sm opacity-90">{issue.impact}</p>
+      {/* Issues - Compact */}
+      {module.issues && module.issues.length > 0 && (
+        <Card className="border-slate-200 shadow-sm">
+          <CardHeader className="pb-2">
+            <CardTitle className="flex items-center text-sm font-semibold">
+              <AlertCircle className="mr-2 h-4 w-4 text-red-600" />
+              Issues Detected ({module.issues.length})
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="pt-1 pb-3">
+            <div className="space-y-2">
+              {module.issues.map((issue, index) => (
+                <div
+                  key={index}
+                  className={`p-3 rounded-md border ${getSeverityColor(issue.severity)}`}
+                >
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="flex-1 min-w-0">
+                      <p className="font-medium text-sm leading-tight">{issue.message}</p>
+                      <p className="mt-1 text-xs text-slate-500">{issue.impact}</p>
+                    </div>
+                    <span className="text-xs font-semibold uppercase px-2 py-0.5 bg-white/50 rounded">
+                      {issue.severity}
+                    </span>
                   </div>
-                  <span className="ml-4 text-xs font-semibold uppercase">
-                    {issue.severity}
-                  </span>
                 </div>
-              </div>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      )}
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center text-lg">
-            <Lightbulb className="mr-2 h-5 w-5 text-yellow-600" />
-            Recommendations
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <ul className="space-y-2">
-            {module.recommendations.map((rec, index) => (
-              <li key={index} className="flex items-start">
-                <span className="mr-2 mt-1 flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-yellow-100 text-xs font-semibold text-yellow-800">
-                  {index + 1}
-                </span>
-                <span className="text-slate-700">{rec}</span>
-              </li>
-            ))}
-          </ul>
-        </CardContent>
-      </Card>
+      {/* Recommendations - Compact */}
+      {module.recommendations && module.recommendations.length > 0 && (
+        <Card className="border-slate-200 shadow-sm">
+          <CardHeader className="pb-2">
+            <CardTitle className="flex items-center text-sm font-semibold">
+              <Lightbulb className="mr-2 h-4 w-4 text-yellow-600" />
+              Recommendations
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="pt-1 pb-3">
+            <ul className="space-y-1.5">
+              {module.recommendations.map((rec, index) => (
+                <li key={index} className="flex items-start text-sm">
+                  <span className="mr-2 mt-0.5 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-yellow-100 text-xs font-semibold text-yellow-800">
+                    {index + 1}
+                  </span>
+                  <span className="text-slate-700 leading-tight">{rec}</span>
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
+      )}
     </div>
   );
 }

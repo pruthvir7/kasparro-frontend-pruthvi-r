@@ -43,3 +43,9 @@ export interface BrandData {
   brands: Brand[];
   currentBrand: Brand;
 }
+
+export interface ModuleCardProps {
+  module: AuditModule;
+  isSelected?: boolean;
+  onClick?: () => void;
+}

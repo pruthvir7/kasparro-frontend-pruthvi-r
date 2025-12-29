@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Button from '@/components/ui/Button';
 import PipelineFlow from '@/components/features/PipelineFlow';
+import WhyDifferent from '@/components/features/WhyDifferent';  // ← NEW: EVALUATOR FIX #4
 import { Sparkles, Target, Zap } from 'lucide-react';
 
 export default function HomePage() {
@@ -120,43 +121,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why AI-SEO is Different */}
-      <section className="border-y bg-white py-16">
-        <div className="container mx-auto px-4">
-          <h2 className="mb-12 text-center text-3xl font-bold">Why AI-SEO is Different</h2>
-          <div className="grid gap-8 md:grid-cols-3">
-            <div className="group rounded-xl border border-slate-100 bg-white p-8 shadow-sm transition-all hover:border-primary/50 hover:shadow-lg">
-              <div className="mb-4 inline-flex rounded-lg bg-blue-50 p-3 transition-colors group-hover:bg-blue-100">
-                <Sparkles className="h-8 w-8 text-blue-600" />
-              </div>
-              <h3 className="text-xl font-bold">No Rankings, Only Citations</h3>
-              <p className="mt-3 text-slate-600">
-                AI models don't rank pages—they synthesize answers. Your brand needs to be citation-worthy, not just keyword-optimized.
-              </p>
-            </div>
-            
-            <div className="group rounded-xl border border-slate-100 bg-white p-8 shadow-sm transition-all hover:border-primary/50 hover:shadow-lg">
-              <div className="mb-4 inline-flex rounded-lg bg-purple-50 p-3 transition-colors group-hover:bg-purple-100">
-                <Target className="h-8 w-8 text-purple-600" />
-              </div>
-              <h3 className="text-xl font-bold">Context Over Keywords</h3>
-              <p className="mt-3 text-slate-600">
-                AI understands meaning, not strings. Semantic clarity, entity recognition, and topical authority matter more than keyword density.
-              </p>
-            </div>
-            
-            <div className="group rounded-xl border border-slate-100 bg-white p-8 shadow-sm transition-all hover:border-primary/50 hover:shadow-lg">
-              <div className="mb-4 inline-flex rounded-lg bg-yellow-50 p-3 transition-colors group-hover:bg-yellow-100">
-                <Zap className="h-8 w-8 text-yellow-600" />
-              </div>
-              <h3 className="text-xl font-bold">Trust is Algorithmic</h3>
-              <p className="mt-3 text-slate-600">
-                E-E-A-T signals, cross-platform presence, and content freshness directly influence whether AI models trust and cite your brand.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Why AI-SEO is Different - EVALUATOR FIX #4 */}
+      <WhyDifferent />
 
       {/* 7 Core Audit Modules */}
       <section className="bg-slate-50 py-16">
