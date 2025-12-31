@@ -167,20 +167,28 @@ export default function DashboardPage() {
           title="AI Visibility Score"
           value={currentBrand.metrics?.aiVisibilityScore || 0}
           trend={currentBrand.metrics?.trend}
+          className="group hover:shadow-md transition-all duration-200"
+
         />
         <MetricCard
           title="Trust / E-E-A-T Score"
           value={currentBrand.metrics?.trustScore || 0}
           trend={currentBrand.metrics?.trend}
+          className="group hover:shadow-md transition-all duration-200"
+
         />
         <MetricCard
           title="Non-Branded Coverage"
           value={currentBrand.metrics?.nonBrandedKeywordCoverage || 0}
           suffix="%"
+          className="group hover:shadow-md transition-all duration-200"
+
         />
         <MetricCard
           title="Last Audit"
           value={formatDate(currentBrand.metrics?.lastAuditDate || '')}
+          className="group hover:shadow-md transition-all duration-200"
+
         />
       </div>
 

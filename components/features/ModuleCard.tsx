@@ -33,9 +33,6 @@ export default function ModuleCard({ module }: ModuleCardProps) {
             <h3 className="font-bold text-xl text-slate-900 leading-tight mb-2">
               {module.name}
             </h3>
-            <p className="text-sm text-slate-600 leading-relaxed mb-3 line-clamp-2">
-              {module.description}
-            </p>
             
             {/* ✅ FIXED: Full insight visible */}
             {module.insights && module.insights.length > 0 && (
